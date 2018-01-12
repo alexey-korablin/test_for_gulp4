@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/alexey-korablin/test_for_gulp4#readme",
   "devDependencies": {
-    "gulp": "github:gulpjs/gulp#4.0"
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-pug": "^3.3.0"
   }
 }
