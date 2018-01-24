@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/alexey-korablin/test_for_gulp4#readme",
   "devDependencies": {
+    "browser-sync": "^2.23.5",
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-autoprefixer": "^4.1.0",
     "gulp-csso": "^3.0.1",

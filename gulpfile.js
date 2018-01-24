@@ -3,6 +3,15 @@
 // let pug = require('gulp-pug');
 let gulp = require('gulp');
 let gp = require('gulp-load-plugins')();
+const browserSync = require('browser-sync').create();
+
+gulp.task('serve', () => {
+    browserSync.init({
+        server: {
+            baseDir: "./build"
+        }
+    });
+})
 
 gulp.task('pug', () => {
     return gulp.src('src/pug/pages/*.pug')
@@ -10,6 +19,7 @@ gulp.task('pug', () => {
             pretty: true
         }))
         .pipe(gulp.dest('build'))
+        .on('end', browserSync.reload);
 })
 
 gulp.task('less', () => {
@@ -27,6 +37,9 @@ gulp.task('less', () => {
         .pipe(gp.csso())
         .pipe(gp.sourcemaps.write())
         .pipe(gulp.dest('build/static/css/'))
+        .pipe(browserSync.reload({
+            stream: true
+        }));
 })
 
 gulp.task('watch', () => {
@@ -35,5 +48,6 @@ gulp.task('watch', () => {
 })
 
 gulp.task('default', gulp.series(
-    gulp.parallel('pug', 'less'), 'watch'
+    gulp.parallel('pug', 'less'), 
+    gulp.parallel('watch', 'serve')
 ));
