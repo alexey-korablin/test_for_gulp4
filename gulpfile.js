@@ -5,6 +5,12 @@ let gulp = require('gulp');
 let gp = require('gulp-load-plugins')();
 const browserSync = require('browser-sync').create();
 
+// global.$ = {
+//     gulp: require('gulp'),
+//     gp: require('gulp-load-plugins')(),
+//     bs: require('browser-sync').create()
+// }
+
 gulp.task('serve', () => {
     browserSync.init({
         server: {
