@@ -2,7 +2,9 @@ module.exports = () => {
     $.gulp.task('less', () => {
         return $.gulp.src('src/static/less/*.less')
             .pipe($.gp.sourcemaps.init())
-            .pipe($.gp.less({}))
+            .pipe($.gp.less({
+                'include css': true
+            }))
             .pipe($.gp.autoprefixer({
                 browsers: ['last 10 versions'],
                 cascade: false
@@ -17,5 +19,5 @@ module.exports = () => {
             .pipe($.bs.reload({
                 stream: true
             }));
-    })
-}
+    });
+};

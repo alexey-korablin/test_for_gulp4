@@ -5,5 +5,5 @@ module.exports = () => {
                 baseDir: "./build"
             }
         });
-    })
-}
+    });
+};

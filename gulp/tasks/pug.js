@@ -6,5 +6,5 @@ module.exports = () => {
             }))
             .pipe($.gulp.dest('build'))
             .on('end', $.bs.reload);
-    })
-}
+    });
+};
