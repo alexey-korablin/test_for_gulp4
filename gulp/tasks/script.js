@@ -10,6 +10,7 @@ module.exports = () => {
             stream: true
         }))
     });
+    
     $.gulp.task('script', () => {
         return $.gulp.src('src/static/js/main.js')
         .pipe($.gulp.dest('build/static/js'))
